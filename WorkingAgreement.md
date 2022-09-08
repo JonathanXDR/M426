@@ -1,4 +1,4 @@
-# Working agreement
+# Working agreementCancel changes
 
 ## Definition of Ready
 
@@ -8,7 +8,10 @@
 
 ## Definition of Done
 
+- [ ] The code is complete
 - [ ] The code meets <b>all</b> acceptance criteria
-- [ ] The code story must have been reviewed by another developer (Peer coding)
-- [ ] The code has been tested manually or automatically
+- [ ] The code story must have been reviewed by another developer 
+- [ ] The code has been tested manually or automatically 
+  - [ ] At least 3 test cases
+  - [ ] No failed tests
 - [ ] The user story has approval of the PO
