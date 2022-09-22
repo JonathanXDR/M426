@@ -1,9 +1,6 @@
 <template>
   <div class="tile" :class="{ flipped: card.flipped, found: card.found }">
-    <div
-      class="back-face"
-      :style="`background-image: url('${card.url}')`"
-    ></div>
+    <div class="back-face"></div>
     <div class="front-face" @click="$emit('clickCallback')"></div>
   </div>
 </template>
