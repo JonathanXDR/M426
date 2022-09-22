@@ -1,0 +1,104 @@
+.card-container {
+  height: 75px !important;
+  width: 75px !important;
+}
+
+@media (min-width: 479px) {
+  .card-container {
+    height: 100px !important;
+    width: 100px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    height: 150px !important;
+    width: 150px !important;
+  }
+}
+
+.front-face:hover {
+  box-shadow: 2px 4px 16px var(--color-shadow-card-hover);
+  transform: scale3d(1.01, 1.01, 1.01);
+  cursor: pointer;
+}
+
+.front-face,
+.back-face {
+  box-shadow: 2px 4px 12px var(--color-shadow-card);
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  transition: box-shadow 0.25s;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(238, 243, 246);
+}
+
+.card-container .back-face,
+.card-container .front-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat;
+  background: var(--color-fill-tertiary);
+}
+
+.card-container .tile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  /* transform-style: preserve-3d; */
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-container .back-face,
+.card-container .flipped {
+  transform: rotateY(180deg);
+}
+
+.found {
+  transform: rotateY(180deg);
+}
+
+.found .back-face {
+  box-shadow: none !important;
+  transition: opacity 0.5s;
+  opacity: 0.25;
+}
+
+.tile-overlay.fade-in {
+  visibility: visible;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  opacity: 0.8;
+}
+
+.tile-overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
