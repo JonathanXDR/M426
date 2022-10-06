@@ -70,7 +70,7 @@
   transform: rotateY(180deg);
 }
 
-/* .found {
+.found {
   transform: rotateY(180deg);
 }
 
@@ -78,7 +78,7 @@
   box-shadow: none !important;
   transition: opacity 0.5s;
   opacity: 0.25;
-} */
+}
 
 .tile-overlay.fade-in {
   visibility: visible;

@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <section class="ac-ln-content">
-      <!-- <div class="menu">
+      <div class="menu">
         <div class="score">
           <p>Time: {{ timeString }}</p>
           <p>Turns: {{ turns }}</p>
@@ -13,7 +13,7 @@
         >
           Reset
         </button>
-      </div> -->
+      </div>
 
       <div class="cards">
         <div class="card-container" v-for="(card, index) in cards" :key="index">

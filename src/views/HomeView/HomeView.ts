@@ -6,8 +6,9 @@ import DialogModal from "@/components/DialogModal/DialogModal.vue";
 
 import type { Card } from "@/types/Card";
 import ApiService from "@/services/ApiService";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "HomeView",
   components: {
     NavBar,
@@ -230,4 +231,4 @@ export default {
       });
     },
   },
-};
+});
