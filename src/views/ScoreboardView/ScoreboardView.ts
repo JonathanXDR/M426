@@ -1,7 +1,8 @@
 import type { ScoreBaseDTO } from "@/dto/ScoreBaseDTO";
 import ApiService from "@/services/ApiService";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "ScoreboardView",
   components: {},
   data() {
@@ -23,4 +24,4 @@ export default {
         });
     },
   },
-};
+});
