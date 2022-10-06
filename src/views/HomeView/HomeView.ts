@@ -8,7 +8,14 @@ import type { Card } from "@/types/Card";
 import ApiService from "@/services/ApiService";
 import { defineComponent } from "vue";
 
+<<<<<<< Updated upstream
 export default defineComponent({
+=======
+
+let secondCounter:number = 0;
+
+export default {
+>>>>>>> Stashed changes
   name: "HomeView",
   components: {
     NavBar,
@@ -102,6 +109,20 @@ export default defineComponent({
         this.cards = cards;
       }, 250);
     },
+
+    startTimer():void{
+     while(true){
+      setTimeout(this.increaseCounter, 10);
+     } 
+    },
+
+    increaseCounter():void{
+      this.secondCounter++;
+    },
+
+    updateCounterUi():void{
+      
+    }
 
     addResults(): void {
       if (this.userNameValid && this.userName) {

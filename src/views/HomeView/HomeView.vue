@@ -14,6 +14,8 @@
         </button>
       </div>
 
+
+
       <div class="cards">
         <div class="card-container" v-for="(card, index) in cards" :key="index">
           <CardTile
@@ -23,6 +25,7 @@
         </div>
       </div>
     </section>
+     <p>Time: {{ secondCounter }}</p>
 
     <!-- <DialogModal /> -->
   </div>
