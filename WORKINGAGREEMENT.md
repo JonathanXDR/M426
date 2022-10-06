@@ -1,4 +1,4 @@
-# Working agreementCancel changes
+# Working agreement
 
 ## Definition of Ready
 
