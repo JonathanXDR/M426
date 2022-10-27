@@ -1,27 +1,23 @@
 <template>
-  <div class="padding-4">
-    <div id="my-table" class="table table--responsive table--highlight">
-      <h2 class="table__title">Scoreboard</h2>
-      <div class="table__wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th data-type="number">Rank</th>
-              <th data-type="number">Username</th>
-              <th data-type="number">Total score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(score, index) in scores" :key="index">
-              <td>{{ score.rank }}#</td>
-              <td>{{ score.userName }}</td>
-              <td>{{ score.score }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+  <section class="ac-ln-content">
+    <h1>Scoreboard</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Total score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(score, index) in scores" :key="index">
+          <td>{{ score.rank }}#</td>
+          <td>{{ score.userName }}</td>
+          <td>{{ score.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 </template>
 
 <script src="./ScoreboardView.ts" lang="ts"></script>

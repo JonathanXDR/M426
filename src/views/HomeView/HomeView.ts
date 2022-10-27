@@ -6,11 +6,9 @@ import DialogModal from "@/components/DialogModal/DialogModal.vue";
 
 import type { Card } from "@/types/Card";
 import ApiService from "@/services/ApiService";
+import { defineComponent } from "vue";
 
-
-let secondCounter:number = 0;
-
-export default {
+export default defineComponent({
   name: "HomeView",
   components: {
     NavBar,
@@ -104,20 +102,6 @@ export default {
         this.cards = cards;
       }, 250);
     },
-
-    startTimer():void{
-      while(true){
-       setTimeout(this.increaseCounter, 10);
-      } 
-     },
- 
-     increaseCounter():void{
-       this.secondCounter++;
-     },
- 
-     updateCounterUi():void{
-       
-     },
 
     addResults(): void {
       if (this.userNameValid && this.userName) {
@@ -247,4 +231,4 @@ export default {
       });
     },
   },
-};
+});

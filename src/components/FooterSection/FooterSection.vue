@@ -14,13 +14,15 @@
         </a>
       </li>
 
-      <li data-inviewport="sharesheet-options">
+      <!-- <li data-inviewport="sharesheet-options"> -->
+      <li>
         <a href="mailto:jonathan.russ@bluewin.ch" target="_blank"
           ><font-awesome-icon icon="fa-solid fa-envelope"
         /></a>
       </li>
 
-      <li data-inviewport="sharesheet-options">
+      <!-- <li data-inviewport="sharesheet-options"> -->
+      <li>
         <a
           href="https://www.linkedin.com/in/jonathan-russ-b7442a228"
           target="_blank"
@@ -28,13 +30,15 @@
         /></a>
       </li>
 
-      <li data-inviewport="sharesheet-options">
+      <!-- <li data-inviewport="sharesheet-options"> -->
+      <li>
         <a href="https://github.com/JonathanXDR" target="_blank"
           ><font-awesome-icon icon="fa-brands fa-github"
         /></a>
       </li>
 
-      <li data-inviewport="sharesheet-options">
+      <!-- <li data-inviewport="sharesheet-options"> -->
+      <li>
         <a href="https://twitter.com/JonathanXD12_" target="_blank"
           ><font-awesome-icon icon="fa-brands fa-twitter"
         /></a>

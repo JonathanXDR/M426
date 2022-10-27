@@ -1,21 +1,22 @@
 <template>
   <div id="home">
     <section class="ac-ln-content">
-      <!-- <div class="menu">
-        <div class="score">
+      <!-- Banner -->
+      <div class="stats-banner">
+        <div class="scores">
           <p>Time: {{ timeString }}</p>
           <p>Turns: {{ turns }}</p>
         </div>
-        <button
-          :disabled="onCoolDown"
-          @click="resetGame()"
-          class="icon-wrapper button button-elevated hero-button"
-        >
-          Reset
-        </button>
-      </div> -->
-
-
+        <div class="controls">
+          <button
+            :disabled="onCoolDown"
+            @click="resetGame()"
+            class="button button-block"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
 
       <div class="cards">
         <div class="card-container" v-for="(card, index) in cards" :key="index">
@@ -26,7 +27,6 @@
         </div>
       </div>
     </section>
-    <p>{{secondCounter}}</p>
 
     <!-- <DialogModal /> -->
   </div>

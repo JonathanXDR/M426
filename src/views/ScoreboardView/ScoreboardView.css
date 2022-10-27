@@ -1,0 +1,22 @@
+h1 {
+  padding-top: 19px;
+  margin-bottom: 64px;
+}
+
+table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 32px;
+  text-align: left;
+}
+
+tr,
+td {
+  padding: 19px 0 19px 0;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8ed;
+}
