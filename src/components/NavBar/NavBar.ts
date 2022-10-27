@@ -1,10 +1,5 @@
-import LogoIcon from "@/components/Icons/LogoIcon.vue";
-
 export default {
   name: "NavBar",
-  components: {
-    LogoIcon,
-  },
   data() {
     return {
       items: [
