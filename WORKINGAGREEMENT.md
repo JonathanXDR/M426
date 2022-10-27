@@ -21,5 +21,4 @@
   - [ ] At least 2 good and 2 bad test cases 
   - [ ] No failed tests
 - [ ] The code was deployed on the web server 
-- [ ] All functions in the code have explanatory comments 
 - [ ] It has been demonstrated in the Sprint Review
