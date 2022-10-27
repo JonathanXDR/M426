@@ -11,9 +11,7 @@
         class="ac-ln-background ac-ln-background-transition"
       ></div>
       <div class="ac-ln-content">
-        <a href="https://jonathan-russ.com" class="ac-ln-title"
-          ><LogoIcon />
-        </a>
+        <a href="https://jonathan-russ.com" class="ac-ln-title"></a>
         <div class="ac-ln-menu">
           <div class="ac-ln-menu-tray">
             <ul class="ac-ln-menu-items">
