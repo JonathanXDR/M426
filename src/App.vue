@@ -1,7 +1,6 @@
 <template>
   <header>
     <NavBar />
-    <!-- <RibbonBar /> -->
   </header>
   <Suspense>
     <template #default>
