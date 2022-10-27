@@ -3,8 +3,7 @@
     <section class="ac-ln-content">
       <div class="menu">
         <div class="score">
-          <p>Time: {{ timeString }}</p>
-          <p>Turns: {{ turns }}</p>
+         
         </div>
         <button
           :disabled="onCoolDown"
