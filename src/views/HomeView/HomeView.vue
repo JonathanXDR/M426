@@ -1,9 +1,10 @@
 <template>
   <div id="home">
     <section class="ac-ln-content">
-      <div class="menu">
+      <!-- <div class="menu">
         <div class="score">
-         
+          <p>Time: {{ timeString }}</p>
+          <p>Turns: {{ turns }}</p>
         </div>
         <button
           :disabled="onCoolDown"
@@ -12,7 +13,7 @@
         >
           Reset
         </button>
-      </div>
+      </div> -->
 
 
 
@@ -25,7 +26,7 @@
         </div>
       </div>
     </section>
-     <p>Time: {{ secondCounter }}</p>
+    <p>{{secondCounter}}</p>
 
     <!-- <DialogModal /> -->
   </div>

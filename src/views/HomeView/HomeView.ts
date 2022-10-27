@@ -6,16 +6,11 @@ import DialogModal from "@/components/DialogModal/DialogModal.vue";
 
 import type { Card } from "@/types/Card";
 import ApiService from "@/services/ApiService";
-import { defineComponent } from "vue";
 
-<<<<<<< Updated upstream
-export default defineComponent({
-=======
 
 let secondCounter:number = 0;
 
 export default {
->>>>>>> Stashed changes
   name: "HomeView",
   components: {
     NavBar,
@@ -111,18 +106,18 @@ export default {
     },
 
     startTimer():void{
-     while(true){
-      setTimeout(this.increaseCounter, 10);
-     } 
-    },
-
-    increaseCounter():void{
-      this.secondCounter++;
-    },
-
-    updateCounterUi():void{
-      
-    }
+      while(true){
+       setTimeout(this.increaseCounter, 10);
+      } 
+     },
+ 
+     increaseCounter():void{
+       this.secondCounter++;
+     },
+ 
+     updateCounterUi():void{
+       
+     },
 
     addResults(): void {
       if (this.userNameValid && this.userName) {
@@ -252,4 +247,4 @@ export default {
       });
     },
   },
-});
+};
