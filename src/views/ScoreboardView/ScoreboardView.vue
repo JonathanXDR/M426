@@ -1,6 +1,6 @@
 <template>
   <section class="ac-ln-content">
-    <h1>Scoreboard</h1>
+    <!-- <h1>Scoreboard</h1>
     <table>
       <thead>
         <tr>
@@ -16,7 +16,7 @@
           <td>{{ score.score }}</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </section>
 </template>
 
