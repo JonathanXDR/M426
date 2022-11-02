@@ -21,4 +21,5 @@
   - [ ] At least 2 good and 2 bad test cases 
   - [ ] No failed tests
 - [ ] The code was deployed on the web server 
+- [ ] If the task includes code, at least the functions should have a comment
 - [ ] It has been demonstrated in the Sprint Review
