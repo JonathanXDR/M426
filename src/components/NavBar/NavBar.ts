@@ -1,89 +1,81 @@
-export default {
+import LogoIcon from "@/components/Icons/LogoIcon.vue";
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "NavBar",
+  emits: ["updateAnimations"],
+  components: {
+    LogoIcon,
+  },
   data() {
     return {
       items: [
-        { name: "Game", route: "/" },
+        { name: "Home", route: "/" },
         { name: "Scoreboard", route: "/scoreboard" },
       ],
+      themeDark: false,
+      navOpen: false,
+      navDisabled: false,
     };
   },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+
+    // get prefered theme from settings, if local storage is empty
+    if (localStorage.getItem("theme") === null) {
+      const preferedTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      if (preferedTheme.matches) {
+        this.storeTheme("dark");
+      } else {
+        this.storeTheme("light");
+      }
+    } else {
+      if (localStorage.getItem("theme") === "dark") {
+        this.storeTheme("dark");
+      } else {
+        this.storeTheme("light");
+      }
+    }
+  },
   methods: {
+    // update theme
+    toggleTheme() {
+      this.themeDark = !this.themeDark;
+      if (this.themeDark) {
+        this.storeTheme("dark");
+      } else {
+        this.storeTheme("light");
+      }
+      this.updateAnimations();
+    },
+
+    // store theme in local storage
     storeTheme(themeName: string): void {
+      this.themeDark = themeName === "dark";
       localStorage.setItem("theme", themeName);
       document.documentElement.className = themeName;
     },
 
-    toggleTheme(): void {
-      if (localStorage.getItem("theme") === "dark") {
-        this.storeTheme("light");
-      } else {
-        this.storeTheme("dark");
-      }
+    // open the navbar
+    toggleNav(): void {
+      this.navOpen = !this.navOpen;
+      this.checkboxTimeout();
     },
 
-    themeSettings(): void {
-      const themeButton = document.getElementById(
-        "theme-checkbox"
-      ) as HTMLInputElement;
+    // disable the navbar
+    checkboxTimeout(): void {
+      this.navDisabled = true;
+      setTimeout(() => {
+        this.navDisabled = false;
+      }, 1000);
+    },
 
-      if (localStorage.getItem("theme") === "light") {
-        this.storeTheme("light");
-        themeButton.checked = false;
-      } else {
-        this.storeTheme("dark");
-        themeButton.checked = true;
+    // close navbar if user is scrolling
+    handleScroll(): void {
+      if ((this.navOpen = true && window.scrollY > 0)) {
+        this.navOpen = false;
       }
-
-      const preferedTheme = window.matchMedia("(prefers-color-scheme: dark)");
-      if (preferedTheme.matches) {
-        this.storeTheme("dark");
-        themeButton.checked = true;
-      } else {
-        this.storeTheme("light");
-        themeButton.checked = false;
-      }
-
-      themeButton.addEventListener("change", function () {
-        const elementsAndClassNames = [
-          {
-            element: document.getElementById("ac-ln-background"),
-            className: "ac-ln-background-transition",
-          },
-          {
-            element: document.getElementById("ribbon-content-wrapper"),
-            className: "ribbon-content-wrapper-animation",
-          },
-          {
-            element: document.getElementById("ribbon-content"),
-            className: "ribbon-content-animation",
-          },
-          {
-            element: document.getElementById("ribbon-link"),
-            className: "ribbon-link-animation",
-          },
-        ] as Array<{ element: HTMLElement; className: string }>;
-
-        elementsAndClassNames.forEach((elementAndClassName) => {
-          elementAndClassName.element?.classList.remove(
-            elementAndClassName.className
-          );
-        });
-
-        setTimeout(() => {
-          elementsAndClassNames[0].element.classList.add(
-            elementsAndClassNames[0].className
-          );
-        }, 500);
-
-        setTimeout(() => {
-          elementsAndClassNames.forEach((elementAndClassName) => {
-            elementAndClassName.element?.classList.add(
-              elementAndClassName.className
-            );
-          });
-        }, 1);
-      });
     },
   },
-};
+});
