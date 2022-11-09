@@ -1,12 +1,8 @@
-import LogoIcon from "@/components/Icons/LogoIcon.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "NavBar",
   emits: ["updateAnimations"],
-  components: {
-    LogoIcon,
-  },
   data() {
     return {
       items: [
