@@ -1,6 +1,6 @@
 <template>
-  <section class="ac-ln-content">
-    <!-- <h1>Scoreboard</h1>
+  <section class="section-separated">
+    <h1>Scoreboard</h1>
     <table>
       <thead>
         <tr>
@@ -11,12 +11,12 @@
       </thead>
       <tbody>
         <tr v-for="(score, index) in scores" :key="index">
-          <td>{{ score.rank }}#</td>
+          <td>#{{ score.rank }}</td>
           <td>{{ score.userName }}</td>
           <td>{{ score.score }}</td>
         </tr>
       </tbody>
-    </table> -->
+    </table>
   </section>
 </template>
 

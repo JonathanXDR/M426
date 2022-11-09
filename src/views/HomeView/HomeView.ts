@@ -24,8 +24,6 @@ export default defineComponent({
       timer: 0,
       time: 0,
       score: 0,
-      userName: "",
-      userNameValid: undefined as boolean | undefined,
       onCoolDown: false,
       timeString: "--:--",
     };
@@ -46,8 +44,7 @@ export default defineComponent({
       this.time = 0;
 
       await this.loadCards();
-      this.userName = "";
-      this.userNameValid = undefined;
+
       this.score = 0;
 
       setTimeout(() => {
@@ -103,10 +100,10 @@ export default defineComponent({
       }, 250);
     },
 
-    addResults(): void {
-      if (this.userNameValid && this.userName) {
+    submitResults(userName: string): void {
+      if (userName) {
         ApiService.addScore({
-          userName: this.userName,
+          userName: userName,
           score: this.score,
         });
         this.resetGame();
@@ -176,12 +173,10 @@ export default defineComponent({
       // }
 
       clearInterval(this.timer);
-      // (this.$refs.modal as HTMLSdxDialogElement).open();
-    },
 
-    setUserName(userName: string) {
-      this.userName = userName;
-      this.userNameValid = userName.length > 0;
+      const modal = this.$refs.modal as any;
+      modal.toggleModal();
+      // (this.$refs.modal as HTMLSdxDialogElement).open();
     },
 
     flipCard(index: number): void {

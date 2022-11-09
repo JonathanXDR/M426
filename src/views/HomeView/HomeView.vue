@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <section class="ac-ln-content">
+    <section class="section-separated">
       <!-- Banner -->
       <div class="stats-banner">
         <div class="scores">
@@ -28,9 +28,13 @@
       </div>
     </section>
 
-    <!-- <DialogModal /> -->
+    <DialogModal
+      @submitResults="(userName: string) => submitResults(userName)"
+      :score="score"
+      ref="modal"
+    />
   </div>
 </template>
 
 <script lang="ts" src="./HomeView.ts"></script>
-<style src="./HomeView.css"></style>
+<style scoped src="./HomeView.css"></style>

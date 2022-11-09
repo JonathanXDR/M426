@@ -36,6 +36,8 @@ body {
   /* Special Colors */
   --color-shadow-card: rgb(0 0 0 / 8%);
   --color-shadow-card-hover: rgb(0 0 0 / 16%);
+  --color-form-textbox-input: rgba(255, 255, 255, 0.8);
+  --color-form-textbox-input-disabled: rgba(255, 255, 255, 0.2);
   --color-sub-text: #666;
   --color-tutorials-overview-background: radial-gradient(
     circle at center 70%,
@@ -165,6 +167,8 @@ body {
   /* Special Colors */
   --color-shadow-card: rgb(255 255 255 / 8%);
   --color-shadow-card-hover: rgb(255 255 255 / 16%);
+  --color-form-textbox-input: rgba(255, 255, 255, 0.04);
+  --color-form-textbox-input-disabled: rgba(255, 255, 255, 0.1);
   --color-sub-text: #aaa;
   --color-tutorials-overview-background: radial-gradient(
     circle at center 70%,
@@ -283,7 +287,7 @@ body {
   margin-right: auto !important;
 }
 
-.section-separated:not(#about) {
+.section-separated:not(:first-child) {
   border-top: 1px solid #d2d2d7;
 }
 
@@ -1411,4 +1415,57 @@ a:link:hover {
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   padding: 52px 0;
+}
+
+/* --------------------------------- Button --------------------------------- */
+
+button {
+  all: unset;
+}
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  min-width: 28px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 980px;
+  background: var(--color-fill-blue);
+  color: #fff;
+  --sk-button-margin-horizontal: 14px;
+  --sk-button-margin-vertical: 14px;
+}
+.button:hover {
+  text-decoration: none;
+  background: #0077ed;
+}
+.button:disabled {
+  cursor: default;
+  background: #0071e3;
+  color: #fff;
+  opacity: 0.32;
+}
+.button-super {
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  min-width: 28px;
+  padding-left: 31px;
+  padding-right: 31px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  --sk-button-margin-horizontal: 22px;
+  --sk-button-margin-vertical: 22px;
 }

@@ -27,6 +27,7 @@
               <li
                 v-for="(item, index) in items"
                 :key="index"
+                @click="navOpen ? toggleNav() : null"
                 class="ac-ln-menu-item"
               >
                 <router-link :to="item.route" class="ac-ln-menu-link">

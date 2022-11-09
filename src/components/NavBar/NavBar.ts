@@ -21,7 +21,6 @@ export default defineComponent({
   created() {
     window.addEventListener("scroll", this.handleScroll);
 
-    // get prefered theme from settings, if local storage is empty
     if (localStorage.getItem("theme") === null) {
       const preferedTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -39,7 +38,6 @@ export default defineComponent({
     }
   },
   methods: {
-    // update theme
     toggleTheme() {
       this.themeDark = !this.themeDark;
       if (this.themeDark) {
@@ -50,20 +48,17 @@ export default defineComponent({
       this.updateAnimations();
     },
 
-    // store theme in local storage
     storeTheme(themeName: string): void {
       this.themeDark = themeName === "dark";
       localStorage.setItem("theme", themeName);
       document.documentElement.className = themeName;
     },
 
-    // open the navbar
     toggleNav(): void {
       this.navOpen = !this.navOpen;
       this.checkboxTimeout();
     },
 
-    // disable the navbar
     checkboxTimeout(): void {
       this.navDisabled = true;
       setTimeout(() => {
@@ -71,11 +66,18 @@ export default defineComponent({
       }, 1000);
     },
 
-    // close navbar if user is scrolling
     handleScroll(): void {
       if ((this.navOpen = true && window.scrollY > 0)) {
         this.navOpen = false;
       }
+    },
+
+    updateAnimations(): void {
+      const background = this.$refs["ac-ln-background"] as any;
+      background.classList.remove("ac-ln-background-transition");
+      setTimeout(() => {
+        background.classList.add("ac-ln-background-transition");
+      }, 500);
     },
   },
 });
