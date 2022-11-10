@@ -1,4 +1,4 @@
-# Impediments / Teambacklog
+# Teambacklog / Impediments
 
 1. User stories were not independent enough
    Solution: During Refinement the user stories were re-analyzed and with the progress in the project they naturally became independen
